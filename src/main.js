@@ -89,7 +89,8 @@ const pos0 = new THREE.Vector3(), pos1 = new THREE.Vector3(), carWorldPos = new 
 const clock = new THREE.Clock(), DURATION = 5.0, speeds = [0.4, 0.6, 0.8, 1.0]
 
 // Load Model & Configure Actions
-new GLTFLoader().load('/CAR1d.glb', (gltf) => {
+new GLTFLoader().load(
+  `${import.meta.env.BASE_URL}CAR1d.glb`,(gltf) => {
   const model = gltf.scene
   model.traverse(c => { if (c.isMesh) c.castShadow = c.receiveShadow = true })
   carWrapper.add(model)
